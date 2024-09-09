@@ -1,0 +1,25 @@
+# Steve
+
+-   Minecraft
+    -   Who gives a fuck
+-   File shares
+    -   **DEAD AIR** since Jukebox has nothing to play (and neither does BAPS)
+    -   Replicated hourly to urybackup0
+    -   Samba and NFS will probably already be installed from when it was replaced by Steve (lol), although chances are they may be quite outdated
+    -   Go into Wogan and change the DNS records for musicstore and filestore to point to backup0 - this should cover BAPS, if it doesn’t, `ipconfig /flushdns` and a server restart
+    -   Some servers (namely Thunderhorn and Dolby) don’t use AD for DNS and so have it mounted by IP address in fstab, change that
+-   Campus Playout Liquidsoap
+    -   The script is in GitHub, copy it to another box with Liquidsoap - Dolby will do in a pinch
+    -   Also copy and edit the sample configs for each of the instances
+    -   Note that the music store is expected to be mounted on /music - if you’re moving it to Dolby this should be all set up, for another box you may need to mount backup0
+-   Postgres
+    -   Fix: hot standby on urybackup0, `pg_ctl promote -D /pool0/backup/backup0-postgres` should make it the primary
+    -   Note: THIS WILL MAKE IT THE PRIMARY, MAKE SURE NO WRITES GO TO STEVE OR YOU WILL HAVE SPLIT-BRAIN!!! When you fix/replace steve as the primary, do a full replication to it from bup0 before promoting it
+    -   Things that need updating for the new SQL server:
+        -   DNS (on uryfw0 and Wogan) - Should take care of Thunderhorn, Jukebox and BAPS.
+        -   SelectorListener - Should be done by DNS but it didn’t last time
+        -   Thunderhorn
+            -   MyRadio - /usr/local/www/myradio/src/MyRadio_Config.local.php
+            -   Campus Playout - /usr/local/www/campus-playout-server(-dev)/config.toml
+        -   Jukebox (formerly Dolby rip)
+        -   All the BAPSes

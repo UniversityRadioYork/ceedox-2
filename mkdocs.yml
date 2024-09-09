@@ -1,0 +1,64 @@
+site_name: Ceedox 2
+repo_url: https://github.com/UniversityRadioYork/ceedox-2
+edit_uri: blob/main/docs/
+nav:
+    - Home: index.md
+    - Misc Pages:
+          - Acceptable Use Policy: misc-pages/acceptableusepolicy.md
+    - Computing:
+          - Basics:
+                - computing/basics/index.md
+                - Software Development: computing/basics/software-dev.md
+                - WWW Access: computing/basics/www.md
+                - SSH Access: computing/basics/ssh.md
+                - VPN Access: computing/basics/vpn.md
+                - Email Access: computing/basics/emails.md
+
+          - Important Things:
+                - computing/important/index.md
+                - Induction: computing/important/induction.md
+                - Being Graceful: computing/important/graceful.md
+                - Legal Obligations: computing/important/legal.md
+          - Broadcast Chain:
+                - computing/broadcast-chain/index.md
+                - Dante: computing/broadcast-chain/dante.md
+                - The Hub: computing/broadcast-chain/hub.md
+                - Source Selection: computing/broadcast-chain/source-selection.md
+                - Virtual Switching: computing/broadcast-chain/virtual-switching.md
+                - Virtual Sources and Audio Routing: computing/broadcast-chain/virtual-sources.md
+          - Transmission Chain:
+                - computing/transmission-chain/index.md
+                - Common Tasks: computing/transmission-chain/common-tasks.md
+                - Terminology: computing/transmission-chain/terminology.md
+                - Equipment in the Cupboard: computing/transmission-chain/equipment-in-cupboard.md
+                - Getting into the Cupboard: computing/transmission-chain/getting-in-cupboard.md
+                - Equipment in the Station: computing/transmission-chain/equipment-in-station.md
+                - Dante: computing/transmission-chain/dante.md
+                - Software Station-Side: computing/transmission-chain/station-side-software.md
+                - Source Selection: computing/transmission-chain/source-selection.md
+                - Virtual Sources and Audio Routing: computing/transmission-chain/virtual-sources.md
+                - Virtual Switching: computing/transmission-chain/virtual-switching.md
+                - Software Library-Side: computing/transmission-chain/library-side-software.md
+          - Contingencies:
+                - computing/contingencies/index.md
+                - Dolby: computing/contingencies/dolby.md
+                - Thunderhorn: computing/contingencies/thunderhorn.md
+                - Steve: computing/contingencies/steve.md
+                - Loggers: computing/contingencies/loggers.md
+                - FW0: computing/contingencies/fw0.md
+          - Guides:
+                - computing/guides/index.md
+                - Cold Starting URY: computing/guides/cold-start.md
+                - Pipewire Setup: computing/guides/pipewire-setup.md
+theme:
+    palette:
+        scheme: ury
+    name: material
+    logo: assets/logo.png
+    favicon: assets/favicon.ico
+    features:
+        - navigation.indexes
+        - content.action.edit
+
+extra_css:
+    - stylesheets/extra.css

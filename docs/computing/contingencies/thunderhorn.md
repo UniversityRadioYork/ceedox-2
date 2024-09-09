@@ -1,0 +1,34 @@
+# Thunderhorn
+
+-   Web
+    -   This means more than you think.
+        -   Obviously, the website and MyRadio are le rip
+        -   Jukebox will break because it relies on the MyRadio API - **POTENTIAL DEAD AIR**
+        -   Campus Playout will break because it relies on its own internal API
+        -   Timelord too
+        -   Wiki and Ceedox… poof
+            -   Including the passwords you need for when ceedox is down
+            -   Thank God for backups.
+                -   If you need them, they’re on urybackup0 at `/pool0/backup/ury/usr/local/www/dokuwiki/data/pages/computing/restricted_passwords.txt`
+    -   Pick a box, any box
+        -   If possible, set it to use IP 144.32.64.162, otherwise you’ll need to reconfigure the DNS as well
+    -   Install nginx and PHP-FPM
+    -   MyRadio
+        -   There should be a backup on backup0:/pool0/backup/ury/usr/local/www/myradio
+        -   Alternatively, git clone it and edit src/MyRadio_Config.local.php, it’s reasonably documented
+        -   Find the nginx configs on bup0, or failing that, bodge together some nginx config from Google tutorials to serve PHP from src/Public
+    -   2016-site
+        -   Ditto for backups
+        -   Failing that, git clone, go build (or scp up the binary and assets), and set up a config.toml and .myradio.key
+        -   There’s a sample FreeBSD rc script for daemonizing it on GitHub, if you’re using another OS/init system adapt it - it’s a simple HTTP server that listens on a port, so set up a nginx proxy to it and you should be gucci
+    -   Campus Playout
+        -   Ditto. It’s built in essentially the same way as 2016-site so you might be able to get away with config copy-pastes
+        -   The only exception being the static client assets, which are not served by the server but rather by nginx directly - use a location block with` alias /usr/local/www/campus-playout-client;`
+    -   Various things that nginx reverse proxies
+        -   If you’re lucky the nginx config will be backed up on backup0. If not, God help you.
+-   Email
+    -   God help you.
+    -   Copy the appropriate /etc folders from the backup on backup0 onto rrod (or another suitable server)
+    -   Install the appropriate package list (via poudriere, `urystv$ grep mail /usr/local/poutriere/amd*/ury*.list`)
+    -   Regenerate the users and mailboxes (`mailBoxGen.sh`)
+    -   Ask ITS to switch the SMTP to the donor box
