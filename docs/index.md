@@ -2,7 +2,11 @@
 
 Welcome to **Ceedox 2**, the URY internal documentation wiki for technical teams.
 
-This is _not_ to be confused with [Team Wiki](http://ury.org.uk/wiki/), which is the general-purpose open-access wiki for use throughout URY. Ceedox can contain sensitive information Team Wiki does not.
+This is _not_ to be confused with [Team Wiki](http://ury.org.uk/wiki/), which is the general-purpose open-access wiki for use throughout URY.
+
+!!! Note
+    Do not put any sensitive information on Ceedox, as it is publicly available.
+    Passwords should be on Vault, anything else sensitive should be either on Netbox or the team Google Drive.
 
 ### Misc Pages
 
