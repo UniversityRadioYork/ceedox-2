@@ -5,6 +5,7 @@ nav:
     - Home: index.md
     - Misc Pages:
           - Acceptable Use Policy: misc-pages/acceptableusepolicy.md
+          - Signal Flow: misc-pages/signalflow.md
     - Computing:
           - Basics:
                 - computing/basics/index.md
@@ -13,7 +14,6 @@ nav:
                 - SSH Access: computing/basics/ssh.md
                 - VPN Access: computing/basics/vpn.md
                 - Email Access: computing/basics/emails.md
-
           - Important Things:
                 - computing/important/index.md
                 - Induction: computing/important/induction.md
@@ -64,6 +64,11 @@ extra_css:
     - stylesheets/extra.css
 
 markdown_extensions:
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences
+    - pymdownx.superfences:
+          custom_fences:
+              - name: mermaid
+                class: mermaid
+                format: !!python/name:pymdownx.superfences.fence_code_format
