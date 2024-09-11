@@ -6,7 +6,7 @@ Failures that can cause **DEAD AIR** are in bold.
 
 See also the server tier list (by broadcast-critical-ness):
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSIVYN3Pl_vDhtzwvUNwf77fRTCcu0S_RPYcdtWC6gyMW2jssh3GbStGv43KxppS0quXx3arO02UhJl/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSIVYN3Pl_vDhtzwvUNwf77fRTCcu0S_RPYcdtWC6gyMW2jssh3GbStGv43KxppS0quXx3arO02UhJl/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="500px"></iframe>
 
 ## Servers
 
